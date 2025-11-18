@@ -48,7 +48,7 @@ This document explains how I built a complete DevSecOps pipeline on AWS using Te
 
 2. Clone project repo:
    ```bash
-   git clone https://github.com/Sravanikethari/k8s-project.git
+   git clone https://github.com/bhargavv62/k8s-project.git
    cd k8s-project/Eks-terraform
    ```
 
