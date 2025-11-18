@@ -52,7 +52,6 @@ This document explains how I built a complete DevSecOps pipeline on AWS using Te
    cd k8s-project/Eks-terraform
    ```
 
-       cd K8s-project/Eks-terraform
 
 3. Create S3 bucket in AWS Console for Terraform state (e.g., `my-terraform-state-bucket-unique-name`) → note region
 
