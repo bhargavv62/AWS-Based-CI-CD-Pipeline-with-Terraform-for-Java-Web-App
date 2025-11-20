@@ -17,6 +17,10 @@ This document explains how I built a complete DevSecOps pipeline on AWS using Te
 - MobaXterm or any SSH client
 - Basic knowledge of AWS, Linux, Jenkins, Docker
 
+## IP'S
+- JENKINS - 8080
+- SONARQUBE - 9000
+- TOMCAT - 8080
 ---
 
 ### Step 1: Launch EC2 Instance (Jenkins + Tools Server)
@@ -34,9 +38,10 @@ This document explains how I built a complete DevSecOps pipeline on AWS using Te
      ```bash
     sudo su -
     ```
+ 11. Launch another with c7i-flex.large for TOMCAT everything same expect IAM configuration   
 
 ---
-11. Launch another with c7i-flex.large for TOMCAT everything same expect IAM configuration 
+ 
    
 
 
@@ -312,8 +317,9 @@ It should look like this
 
 Installing in TOMCAT SERVER → connect →
 
-    1. Launch new EC2 → Amazon Linux → Allow All Traffic
-    2. Install Tomcat:
+  1. Tomcat EC2 → connect 
+  2. Install Tomcat:
+    
    ```bash
    # 1. Install Java 17 (Amazon Corretto)
 yum install -y java-17-amazon-corretto-devel
