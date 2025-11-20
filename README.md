@@ -17,7 +17,7 @@ This document explains how I built a complete DevSecOps pipeline on AWS using Te
 - MobaXterm or any SSH client
 - Basic knowledge of AWS, Linux, Jenkins, Docker
 
-## IP'S
+## PORT-IP'S
 - JENKINS - 8080
 - SONARQUBE - 9000
 - TOMCAT - 8080
