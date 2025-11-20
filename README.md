@@ -162,7 +162,7 @@ Manage Jenkins → Plugins → Available → Select below listed → Install:
 - Deploy to container
 
 ---
-- Restar jenkins
+- Restart jenkins
 ### Step 6: Configure Global Tools in Jenkins
 
 Manage Jenkins → Tools →
