@@ -432,7 +432,7 @@ After building the pipeline:
 - Accessible at: `http://<tomcat-public-ip>:8080/vprofile`
 
 ---
-## Sreenshots
+## Screnshots
 
 ## Jenkins-Dashboard
 <img width="1897" height="869" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/f7ad2e64-96f3-4120-a02a-d2483b15b7a1" />
@@ -469,11 +469,11 @@ After building the pipeline:
 
 <img width="1901" height="885" alt="sonar-op-mvn" src="https://github.com/user-attachments/assets/123ddf8d-b186-4807-829e-0091ac5b7dda" />
 
-## TOmcat-app
+## Tomcat-app
 
 <img width="1907" height="942" alt="tomcat-app" src="https://github.com/user-attachments/assets/516eb451-c787-4fdd-ae06-4b36eb44bf12" />
 
-## Jenkins-pipeline → TOmcat-Deploy
+## Jenkins-pipeline → Tomcat-Deploy
 
 <img width="1920" height="943" alt="total-deploy-pipeline" src="https://github.com/user-attachments/assets/15c8f8de-026d-4264-8516-77f6da0bf666" />
 
