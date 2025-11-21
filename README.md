@@ -434,7 +434,7 @@ After building the pipeline:
 ---
 ## Sreenshots
 
-Jenkins-Dashboard
+## Jenkins-Dashboard
 <img width="1897" height="869" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/f7ad2e64-96f3-4120-a02a-d2483b15b7a1" />
 
 ## Plugins
