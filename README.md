@@ -432,7 +432,7 @@ After building the pipeline:
 - Accessible at: `http://<tomcat-public-ip>:8080/vprofile`
 
 ---
-## Screnshots
+## Screenshots
 
 ## Jenkins-Dashboard
 <img width="1897" height="869" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/f7ad2e64-96f3-4120-a02a-d2483b15b7a1" />
