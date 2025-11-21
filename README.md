@@ -229,7 +229,7 @@ Pipeline Syntax → `waitForQualityGate` → select → sonartoken → Generate:
 }
 ```
 
-**Stage 5: Maven Build**
+**Stage 5: Code Build**
 
 ```groovy
 sh 'mvn clean package'
