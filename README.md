@@ -193,6 +193,9 @@ Manage Jenkins → System → Amazon s3 profiles → Profile name: mybucket
 
 ### Step 8: Create Jenkins Pipeline Job
 
+Jenkins-Full-Pipeline
+
+
 New Item → Name: `mydeployment` → Pipeline → OK
 
 #### Pipeline Stages (Add one by one)
@@ -273,8 +276,8 @@ Pipeline Syntax → S3 Upload:
 **Stage 8: Build Docker Images**
 
 ```groovy
-sh 'docker build -t appimage Docker-app/'
-sh 'docker build -t dbimage Docker-db/'
+sh 'docker build -t appimage Docker-app'
+sh 'docker build -t dbimage Docker-db'
 ```
 
 **Stage 9: Trivy Image Scan**
@@ -291,7 +294,9 @@ sh 'trivy image appimage'
 sh 'trivy image dbimage'
 ```
 
-**Stage 10: Push to Docker Hub**
+**Stage 10: Tag&push**
+
+Push to Docker Hub
 
 Add Docker Hub credentials in Jenkins → Pipeline syntax → with docker Registry → Registry credentials → add →  jenkins → Username: Dockerhub username, Password: Dockerhub password → (ID: `dockerhub`) → select → dockerhub
 
@@ -415,7 +420,9 @@ Check status tomcat
    - Tomcat URL: `http://<tomcat-ip>:8080`
    - Credentials: Credentials → Add → Username/Password → `tomcat` / `admin@123` → ID: `tomcat-creds``tomcat-creds`
 
-Add generated step to pipeline.
+Add generated step to pipeline  → it should look like this
+
+    deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://<tomcat-ip>:8080')], contextPath: 'myapp', war: 'target/vprofile-v2.war'
 
 ---
 
