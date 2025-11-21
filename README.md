@@ -432,6 +432,55 @@ After building the pipeline:
 - Accessible at: `http://<tomcat-public-ip>:8080/vprofile`
 
 ---
+## Sreenshots
+
+Jenkins-Dashboard
+<img width="1897" height="869" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/f7ad2e64-96f3-4120-a02a-d2483b15b7a1" />
+
+## Plugins
+
+<img width="1894" height="865" alt="plugins-1" src="https://github.com/user-attachments/assets/236a7b9b-e4c4-4412-aec2-1b6d16238391" />
+
+
+<img width="1896" height="859" alt="plugins-2" src="https://github.com/user-attachments/assets/8ad8a794-edd0-4b1d-8045-527b0fcf4117" />
+
+
+## New-Item → MyDeployment
+
+<img width="1896" height="874" alt="md-pipeline" src="https://github.com/user-attachments/assets/ae8c8b19-7a36-4e5d-bb4b-dcc0e2314969" />
+
+## Latest-Dependency-Check
+
+<img width="1920" height="869" alt="latest-depency-check" src="https://github.com/user-attachments/assets/bedb8861-ca47-48f7-889b-05f5cd335fae" />
+
+## Dependency-Check-Result
+
+<img width="1899" height="868" alt="DP-check-result" src="https://github.com/user-attachments/assets/73708aed-d5f3-4c06-9032-aac641d9cf7d" />
+
+## Sonarqube-login-page
+
+<img width="1892" height="866" alt="sonar-loginpage" src="https://github.com/user-attachments/assets/fef0c76b-063b-46d6-a708-9855c7c98950" />
+
+## sonarqube-project-Manually
+
+<img width="1900" height="873" alt="sonar-manually" src="https://github.com/user-attachments/assets/c47633b3-95e3-4004-9cf4-ae947733fcdb" />
+
+## Sonarqube-output
+
+<img width="1901" height="885" alt="sonar-op-mvn" src="https://github.com/user-attachments/assets/123ddf8d-b186-4807-829e-0091ac5b7dda" />
+
+## TOmcat-app
+
+<img width="1907" height="942" alt="tomcat-app" src="https://github.com/user-attachments/assets/516eb451-c787-4fdd-ae06-4b36eb44bf12" />
+
+## Jenkins-pipeline → TOmcat-Deploy
+
+<img width="1920" height="943" alt="total-deploy-pipeline" src="https://github.com/user-attachments/assets/15c8f8de-026d-4264-8516-77f6da0bf666" />
+
+## Output-live
+
+<img width="1920" height="877" alt="output-live" src="https://github.com/user-attachments/assets/ce32071e-8bbe-4e8c-b80b-dbd0ae913ce6" />
+
 
 ## Project Repository Links
 - EKS Terraform: https://github.com/bhargavv62/k8s-project.git
