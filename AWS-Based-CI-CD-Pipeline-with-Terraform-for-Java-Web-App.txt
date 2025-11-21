@@ -1,0 +1,77 @@
+pipeline {
+    agent any
+    tools{
+        maven 'mymaven'
+    }  
+    stages {
+        stage('CleanWS') {
+            steps {
+                echo 'cleanWS()'
+            }
+        }
+        stage("code"){
+            steps{
+                 git "https://github.com/bhargavv62/dockerwebapp.git"
+            }
+        }
+        stage("CQA"){
+            steps{
+                 withSonarQubeEnv('mysonar') {
+                      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=MyProject"
+                }
+            }
+        }
+         stage("Quality Gates"){
+            steps{
+                   script{
+                       waitForQualityGate abortPipeline: false, credentialsId: 'sonartoken'
+                  }
+             }
+        }
+        stage("codebuild"){
+            steps{
+                sh 'mvn clean package'
+                sh 'cp -r target Docker-app'
+            }
+        }
+        stage("OWASP"){
+            steps{
+              dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', nvdCredentialsId: 'nvd', odcInstallation: 'DP-check'
+  dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        stage("Artifact"){
+            steps{
+                s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'bhargavvb', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-northeast-1', showDirectlyInBrowser: false, sourceFile: 'target/vprofile-v2.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'mybucket', userMetadata: []          }
+        }
+        stage("ImageBuild"){
+            steps{
+                sh 'docker build -t appimage Docker-app'
+                sh 'docker build -t dbimage Docker-db'
+            }
+        }
+        stage("Trivyscan"){
+            steps{
+                sh 'trivy image appimage'
+                sh 'trivy image dbimage'
+            }
+        }
+        stage("Tag&push"){
+            steps{
+                script{
+                withDockerRegistry(credentialsId: 'dockerhub') {
+                    sh 'docker tag appimage bhargav62/socialmedia:app'
+                    sh 'docker tag dbimage bhargav62/socialmedia:db'
+                    sh 'docker push bhargav62/socialmedia:app'
+                    sh 'docker push bhargav62/socialmedia:db'
+              }
+           }
+        }
+        }
+        stage("deploy"){
+            steps{
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://<tomcat-ip>:8080')], contextPath: 'myapp', war: 'target/vprofile-v2.war'
+            }
+        }
+     }
+  }
