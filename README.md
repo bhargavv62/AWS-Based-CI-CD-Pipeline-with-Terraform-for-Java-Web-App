@@ -477,6 +477,10 @@ After building the pipeline:
 
 <img width="1920" height="943" alt="total-deploy-pipeline" src="https://github.com/user-attachments/assets/15c8f8de-026d-4264-8516-77f6da0bf666" />
 
+## DockerHub
+
+<img width="1907" height="902" alt="dockerhub-socialmedia" src="https://github.com/user-attachments/assets/c41ecf3c-7e4b-464c-bc26-cc55e1f3c2ca" />
+
 ## Output-live
 
 <img width="1920" height="877" alt="output-live" src="https://github.com/user-attachments/assets/ce32071e-8bbe-4e8c-b80b-dbd0ae913ce6" />
