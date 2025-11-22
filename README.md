@@ -2,6 +2,11 @@
 
 This document explains how I built a complete DevSecOps pipeline on AWS using Terraform (EKS), Jenkins, SonarQube, Docker, Trivy, OWASP Dependency-Check, S3 artifact storage, and final deployment to Tomcat.
 
+## Architecture diagram
+
+<img width="1536" height="1024" alt="terraform-project" src="https://github.com/user-attachments/assets/e73ef31c-9e44-4c11-a95f-e7418f831a35" />
+
+
 ## Project Overview
 - Infrastructure: AWS EKS cluster using Terraform
 - CI/CD: Jenkins Pipeline
